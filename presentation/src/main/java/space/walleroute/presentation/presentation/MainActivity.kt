@@ -1,4 +1,4 @@
-package space.walleroute
+package space.walleroute.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
