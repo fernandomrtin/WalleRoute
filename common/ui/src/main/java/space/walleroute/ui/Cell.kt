@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import space.walleroute.model.domain.Coordinates
 import space.walleroute.model.domain.Orientation
 import space.walleroute.model.domain.Position
 
@@ -45,5 +46,5 @@ fun Cell(
 @Preview
 @Composable
 fun CellPreview() {
-    Cell(robotPosition = Position(latitude = 0, longitude = 0, orientation = Orientation.North))
+    Cell(robotPosition = Position(Coordinates(0, 0), orientation = Orientation.North))
 }
