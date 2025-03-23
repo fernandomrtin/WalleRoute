@@ -11,7 +11,7 @@ fun PlanetMatrix(rows: Int, columns: Int, robotPosition: Position) {
         items(rows) { row ->
             LazyRow {
                 items(columns) { col ->
-                    if (robotPosition.latitude == row && robotPosition.longitude == col) {
+                    if (robotPosition.coordinates.latitude == row && robotPosition.coordinates.longitude == col) {
                         Cell(robotPosition = robotPosition)
                     } else {
                         Cell()
