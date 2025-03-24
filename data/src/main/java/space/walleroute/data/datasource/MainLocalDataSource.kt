@@ -5,18 +5,18 @@ import arrow.core.Either
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.serialization.json.Json
 import space.walleroute.data.R
-import space.walleroute.model.dto.RobotRouteDto
+import space.walleroute.model.dto.PlanetInfoDto
 import space.walleroute.model.failure.Failure
 import java.io.InputStreamReader
 import javax.inject.Inject
 
 class MainLocalDataSource @Inject constructor(@ApplicationContext private val context: Context) {
 
-    fun getRobotRouteData(): Either<Failure, RobotRouteDto> {
+    fun getPlanetInfo(): Either<Failure, PlanetInfoDto> {
         return try {
             val jsonString = readJsonFromRaw(R.raw.input)
-            val robotRouteDto = Json.decodeFromString<RobotRouteDto>(jsonString)
-            Either.Right(robotRouteDto)
+            val planetInfoDto = Json.decodeFromString<PlanetInfoDto>(jsonString)
+            Either.Right(planetInfoDto)
         } catch (e: Exception) {
             Either.Left(Failure.JsonParsingError)
         }

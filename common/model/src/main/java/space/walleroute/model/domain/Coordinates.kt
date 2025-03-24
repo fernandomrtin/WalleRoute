@@ -1,6 +1,6 @@
 package space.walleroute.model.domain
 
 data class Coordinates(
-    val latitude: Int,
-    val longitude: Int
+    val xAxis: Int,
+    val yAxis: Int
 )
