@@ -3,6 +3,8 @@ package space.walleroute.presentation.compose
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -17,6 +19,13 @@ import space.walleroute.ui.StartButton
 @Composable
 fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
     val mainState by viewModel.mainState.collectAsState()
+    val snackBarHostState = remember { SnackbarHostState() }
+
+    LaunchedEffect(viewModel.errorEvent) {
+        viewModel.errorEvent.collect { errorMessage ->
+            snackBarHostState.showSnackbar(errorMessage)
+        }
+    }
 
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -33,4 +42,5 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
             }
         }
     }
+    SnackbarHost(hostState = snackBarHostState)
 }
