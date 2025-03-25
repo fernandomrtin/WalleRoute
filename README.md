@@ -6,6 +6,10 @@ Project to calculate the route that our Walle robot has to follow considering th
 
 The robot is represented by the arrow in the matrix. Once we press the start button, the robot will follow his route making a move every two seconds until the final position.
 
+## 🎥 Demo
+
+[![Watch the demo video on YouTube](https://img.youtube.com/vi/KWknVhns0J4/0.jpg)](https://www.youtube.com/watch?v=KWknVhns0J4)
+
 ## Project considerations
 
 This solution was developed following the MVI architecture pattern. We have divided our app into six modules:
