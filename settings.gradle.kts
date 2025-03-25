@@ -21,4 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "WalleRoute"
 include(":app")
- 
+include(":presentation")
+include(":domain")
+include(":data")
+include(":common:model")
+include(":common:ui")
